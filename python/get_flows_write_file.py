@@ -85,7 +85,9 @@ if (response.status_code == 200):
         print(flow)
 
     # write file
-    with open('/tmp/get_flows.json', 'w') as f:
+    isoformat_utc = datetime.datetime.utcnow().isoformat()
+    print(isoformat_utc)
+    with open('/tmp/' + 'get_flows.' + isoformat_utc + '.json', 'w') as f:
         json.dump(flows, f, indent=4)
     # print len json
     flows_len = len(flows)
