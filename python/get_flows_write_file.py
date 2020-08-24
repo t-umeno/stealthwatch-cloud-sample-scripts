@@ -87,6 +87,9 @@ if (response.status_code == 200):
     # write file
     with open('/tmp/get_flows.json', 'w') as f:
         json.dump(flows, f, indent=4)
+    # print len json
+    flows_len = len(flows)
+    print(flows_len)
 
 # If unable to fetch list of alerts
 else:
